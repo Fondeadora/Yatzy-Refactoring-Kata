@@ -6,7 +6,7 @@ class Yatzy:
 
     @staticmethod
     def yatzy(dices: list):
-        if dices.count(dice[0]) == 5:
+        if dices.count(dices[0]) == 5:
             return 50
         return 0
     
@@ -42,36 +42,20 @@ class Yatzy:
         return 0
     
     @staticmethod
-    def two_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
-                    
-        if (n == 2):
-            return score * 2
-        else:
-            return 0
+    def two_pair(*dices: list):
+        result = 0
+        pair = 0
+        for value in range(1,7):
+            if dices.count(value) >= 2:
+                result+=value * 2
+                pair+=1
+        return result if pair > 1 else 0
     
     @staticmethod
-    def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i+1) * 4
+    def four_of_a_kind(*dices: list):
+        for value in range(1,7):
+            if dices.count(value) >= 4:
+                return value * 4
         return 0
     
 
