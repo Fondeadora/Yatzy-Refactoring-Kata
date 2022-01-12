@@ -5,39 +5,39 @@ class Yatzy:
         return d1 + d2 + d3 + d4 + d5
 
     @staticmethod
-    def yatzy(dice: list):
-        if dice.count(dice[0]) == 5:
+    def yatzy(dices: list):
+        if dices.count(dice[0]) == 5:
             return 50
         return 0
     
     @staticmethod
-    def ones(*dice):
-        return dice.count(1)
+    def ones(*dices):
+        return dices.count(1)
     
     @staticmethod
-    def twos(*dice):
-        return dice.count(2) * 2
+    def twos(*dices):
+        return dices.count(2) * 2
     
     @staticmethod
-    def threes(*dice):
-        return dice.count(3) * 3
+    def threes(*dices):
+        return dices.count(3) * 3
     
     @staticmethod
-    def fours(*dice):
-        return dice.count(4) * 4
+    def fours(*dices):
+        return dices.count(4) * 4
     
     @staticmethod
-    def fives(*dice):
-        return dice.count(5) * 5
+    def fives(*dices):
+        return dices.count(5) * 5
     
     @staticmethod
-    def sixes(*dice):
-        return dice.count(6) * 6
+    def sixes(*dices):
+        return dices.count(6) * 6
     
     @staticmethod
-    def score_pair(*dice: list):
+    def score_pair(*dices: list):
         for value in reversed(range(1,7)):
-            if dice.count(value) == 2:
+            if dices.count(value) == 2:
                 return value * 2
         return 0
     
