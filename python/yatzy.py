@@ -5,7 +5,9 @@ class Yatzy:
         return d1 + d2 + d3 + d4 + d5
 
     @staticmethod
-    def yatzy(dice):
+    def yatzy(dice: list):
+        if dice.count(dice[0]) == 5:
+            return 50
         return 0
     
     @staticmethod
