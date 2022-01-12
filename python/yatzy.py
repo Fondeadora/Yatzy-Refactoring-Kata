@@ -11,41 +11,34 @@ class Yatzy:
         return 0
     
     @staticmethod
-    def ones(*args):
-        return args.count(1)
+    def ones(*dice):
+        return dice.count(1)
     
     @staticmethod
-    def twos(*args):
-        return args.count(2) * 2
+    def twos(*dice):
+        return dice.count(2) * 2
     
     @staticmethod
-    def threes(*args):
-        return args.count(3) * 3
+    def threes(*dice):
+        return dice.count(3) * 3
     
     @staticmethod
-    def fours(*args):
-        return args.count(4) * 4
+    def fours(*dice):
+        return dice.count(4) * 4
     
     @staticmethod
-    def fives(*args):
-        return args.count(5) * 5
+    def fives(*dice):
+        return dice.count(5) * 5
     
     @staticmethod
-    def sixes(*args):
-        return args.count(6) * 6
+    def sixes(*dice):
+        return dice.count(6) * 6
     
     @staticmethod
-    def score_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6-at-1] == 2):
-                return (6-at)*2
+    def score_pair(*dice: list):
+        for value in reversed(range(1,7)):
+            if dice.count(value) == 2:
+                return value * 2
         return 0
     
     @staticmethod
