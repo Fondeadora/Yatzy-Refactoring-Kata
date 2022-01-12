@@ -1,5 +1,13 @@
 class Yatzy:
 
+    def __init__(self, d1, d2, d3, d4, _5):
+        self.dice = [0]*5
+        self.dice[0] = d1
+        self.dice[1] = d2
+        self.dice[2] = d3
+        self.dice[3] = d4
+        self.dice[4] = _5
+
     @staticmethod
     def chance(d1: int, d2: int, d3: int, d4: int, d5: int):
         return d1 + d2 + d3 + d4 + d5
@@ -23,38 +31,17 @@ class Yatzy:
     def threes(*args):
         return args.count(3) * 3
     
-
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+    @staticmethod
+    def fours(*args):
+        return args.count(4) * 4
     
-    def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4): 
-                sum += 4
-        return sum
+    @staticmethod
+    def fives(*args):
+        return args.count(5) * 5
     
-
-    def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)): 
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
-    
-
-    def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)): 
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+    @staticmethod
+    def sixes(*args):
+        return args.count(6) * 6
     
     @staticmethod
     def score_pair( d1,  d2,  d3,  d4,  d5):
