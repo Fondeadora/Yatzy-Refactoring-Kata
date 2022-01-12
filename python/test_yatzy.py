@@ -1,7 +1,7 @@
 from yatzy import Yatzy
 
 # These unit tests can be run using the py.test framework
-# available from http://pytest.org/
+# available from http://pytest.org      
 
 def test_chance_scores_sum_of_all_dice():
         expected = 15
